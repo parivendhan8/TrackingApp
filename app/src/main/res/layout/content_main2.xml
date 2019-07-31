@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="bottom"
+    android:layout_height="wrap_content"
+ >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/menu_icon"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_marginStart="0dp"-->
+            <!--android:layout_marginLeft="0dp"-->
+            <!--android:background="#0000"-->
+            <!--app:srcCompat="@drawable/logout"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--tools:ignore="MissingConstraints" />-->
+
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@+id/menu_icon"
+            android:layout_toRightOf="@+id/menu_icon"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLength="25"
+            android:text="Name"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content">
+
+            <Switch
+                android:id="@+id/swith_On"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="0dp"
+                android:checked="true"
+                android:switchMinWidth="56dp"
+                android:textOff="OFF"
+                android:textOn="ON" />
+                <!--android:text=":"-->
+
+            <ImageButton
+                android:id="@+id/logout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:background="#0000"
+                app:layout_anchor="@+id/menu_icon"
+                app:layout_anchorGravity="start|center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38"
+                app:srcCompat="@drawable/logout"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/navigation_main"
+        android:animateLayoutChanges="true"
+        android:id="@+id/content_frame">
+    </FrameLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@android:color/holo_orange_light"
+        app:itemTextColor="@android:color/holo_red_dark"
+        app:menu="@menu/bottomnavigation">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</RelativeLayout>
